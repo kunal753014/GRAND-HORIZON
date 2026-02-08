@@ -108,103 +108,175 @@
         </div>
     </div>
 
-    <!-- Main Booking Card -->
-    <div
-        class="max-w-5xl w-full glass-card rounded-[3rem] overflow-hidden flex flex-col md:flex-row transition-all duration-700 hover:shadow-[0_40px_100px_rgba(0,0,0,0.6)] animate-in fade-in zoom-in duration-1000">
+    <!-- Main Booking Card Section -->
+    <div id="bookingSection" class="w-full flex flex-col items-center">
+        <div
+            class="max-w-5xl w-full glass-card rounded-[3rem] overflow-hidden flex flex-col md:flex-row transition-all duration-700 hover:shadow-[0_40px_100px_rgba(0,0,0,0.6)] animate-in fade-in zoom-in duration-1000">
 
-        <!-- Left Visual Content -->
-        <div class="md:w-2/5 bg-cover bg-center relative hidden md:block"
-            style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200q=100')">
-            <div
-                class="absolute inset-0 bg-gradient-to-t from-indigo-950/90 via-indigo-900/20 to-transparent p-12 flex flex-col justify-end text-white">
-                <span class="text-indigo-400 font-bold tracking-widest text-xs uppercase mb-3">Award Winning</span>
-                <h2 class="text-4xl font-bold mb-4 leading-tight">Your Private Oasis Awaits</h2>
-                <p class="text-indigo-100/70 font-light text-lg">Leave the world behind and immerse yourself in pure
-                    luxury.</p>
+            <!-- Left Visual Content -->
+            <div class="md:w-2/5 bg-cover bg-center relative hidden md:block"
+                style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200q=100')">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-indigo-950/90 via-indigo-900/20 to-transparent p-12 flex flex-col justify-end text-white">
+                    <span class="text-indigo-400 font-bold tracking-widest text-xs uppercase mb-3">Experience Comfort.
+                        Book Now</span>
+                    <h2 class="text-4xl font-bold mb-4 leading-tight">Your Private Oasis Awaits</h2>
+                    <p class="text-indigo-100/70 font-light text-lg">Leave the world behind and immerse yourself in pure
+                        luxury.</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Right Form Content -->
-        <div class="md:w-3/5 p-12 lg:p-16 bg-black/10">
-            <header class="mb-12">
-                <h2 class="text-3xl font-semibold text-white mb-3">Reservation Inquiry</h2>
-                <p class="text-slate-400 text-lg">Please provide your preferred details for a bespoke stay.</p>
-            </header>
+            <!-- Right Form Content -->
+            <div class="md:w-3/5 p-12 lg:p-16 bg-black/10">
+                <header class="mb-12">
+                    <h2 class="text-3xl font-semibold text-white mb-3">Reservation Inquiry</h2>
+                    <p class="text-slate-400 text-lg">Please provide your preferred details for a bespoke stay.</p>
+                </header>
 
-            <form id="bookingForm" class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8" novalidate>
-                <!-- Check-in -->
-                <div class="space-y-3">
-                    <label for="checkIn" class="text-xs font-bold uppercase tracking-widest text-indigo-400/80">Check-in
-                        Date</label>
-                    <input type="date" id="checkIn" name="checkIn" required
-                        class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none input-glow transition-all duration-500">
-                    <p id="checkInError" class="text-rose-400 text-xs hidden italic"></p>
-                </div>
-
-                <!-- Check-out -->
-                <div class="space-y-3">
-                    <label for="checkOut"
-                        class="text-xs font-bold uppercase tracking-widest text-indigo-400/80">Check-out Date</label>
-                    <input type="date" id="checkOut" name="checkOut" required
-                        class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none input-glow transition-all duration-500">
-                    <p id="checkOutError" class="text-rose-400 text-xs hidden italic"></p>
-                </div>
-
-                <!-- Room Type -->
-                <div class="space-y-3">
-                    <label for="roomType"
-                        class="text-xs font-bold uppercase tracking-widest text-indigo-400/80">Accommodation</label>
-                    <div class="relative">
-                        <select id="roomType" name="roomType" required
-                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none input-glow transition-all appearance-none cursor-pointer">
-                            <option value="" class="bg-[#0f172a]">Select Category</option>
-                            <option value="single" class="bg-[#0f172a]">Standard Single</option>
-                            <option value="double" class="bg-[#0f172a]">Executive Double</option>
-                            <option value="suite" class="bg-[#0f172a]">Presidential Suite</option>
-                            <option value="deluxe" class="bg-[#0f172a]">Deluxe Family Room</option>
-                        </select>
-                        <div class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-indigo-400">
-                            ▼
-                        </div>
+                <form id="bookingForm" class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8" novalidate>
+                    <!-- Full Name & Phone -->
+                    <div class="md:col-span-1 space-y-3">
+                        <label for="fullName"
+                            class="text-xs font-bold uppercase tracking-widest text-indigo-400/80">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="John Doe" required
+                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none input-glow transition-all duration-500">
+                        <p id="fullNameError" class="text-rose-400 text-xs hidden italic"></p>
                     </div>
-                    <p id="roomTypeError" class="text-rose-400 text-xs hidden italic"></p>
-                </div>
 
-                <!-- Guest Count -->
-                <div class="space-y-3">
-                    <label for="guests" class="text-xs font-bold uppercase tracking-widest text-indigo-400/80">Guest
-                        Count</label>
-                    <input type="number" id="guests" name="guests" min="1" max="10" placeholder="1" required
-                        class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none input-glow transition-all duration-500">
-                    <p id="guestsError" class="text-rose-400 text-xs hidden italic"></p>
-                </div>
+                    <div class="md:col-span-1 space-y-3">
+                        <label for="phone" class="text-xs font-bold uppercase tracking-widest text-indigo-400/80">Phone
+                            Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1 234 567 890" required
+                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none input-glow transition-all duration-500">
+                        <p id="phoneError" class="text-rose-400 text-xs hidden italic"></p>
+                    </div>
 
-                <!-- Special Requests -->
-                <div class="md:col-span-2 space-y-3">
-                    <label for="requests"
-                        class="text-xs font-bold uppercase tracking-widest text-indigo-400/80">Concierge Notes
-                        (Optional)</label>
-                    <textarea id="requests" name="requests" rows="3"
-                        placeholder="Dietary preferences, special occasions, etc."
-                        class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none input-glow transition-all resize-none duration-500"></textarea>
-                </div>
+                    <!-- Check-in -->
+                    <div class="space-y-3">
+                        <label for="checkIn"
+                            class="text-xs font-bold uppercase tracking-widest text-indigo-400/80">Check-in
+                            Date</label>
+                        <input type="date" id="checkIn" name="checkIn" required
+                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none input-glow transition-all duration-500">
+                        <p id="checkInError" class="text-rose-400 text-xs hidden italic"></p>
+                    </div>
 
-                <!-- Submit Button -->
-                <div class="md:col-span-2 pt-6">
-                    <button type="submit"
-                        class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-5 rounded-2xl shadow-[0_10px_30px_rgba(79,70,229,0.3)] transition-all duration-500 transform hover:scale-[1.01] active:scale-95 btn-shine">
-                        <span class="tracking-[0.2em] uppercase">Confirm Reservation</span>
-                    </button>
-                </div>
-            </form>
+                    <!-- Check-out -->
+                    <div class="space-y-3">
+                        <label for="checkOut"
+                            class="text-xs font-bold uppercase tracking-widest text-indigo-400/80">Check-out
+                            Date</label>
+                        <input type="date" id="checkOut" name="checkOut" required
+                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none input-glow transition-all duration-500">
+                        <p id="checkOutError" class="text-rose-400 text-xs hidden italic"></p>
+                    </div>
 
-            <div id="successMessage"
-                class="hidden mt-10 p-6 bg-emerald-500/10 border border-emerald-500/20 rounded-3xl animate-in zoom-in slide-in-from-bottom-4 duration-500">
-                <p class="text-emerald-400 text-center font-medium text-lg italic">✨ Your request has been received. We
-                    will contact you shortly.</p>
+                    <!-- Room Type -->
+                    <div class="space-y-3">
+                        <label for="roomType"
+                            class="text-xs font-bold uppercase tracking-widest text-indigo-400/80">Accommodation</label>
+                        <div class="relative">
+                            <select id="roomType" name="roomType" required
+                                class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none input-glow transition-all appearance-none cursor-pointer">
+                                <option value="" class="bg-[#0f172a]">Select Category</option>
+                                <option value="single" class="bg-[#0f172a]">Standard Single</option>
+                                <option value="double" class="bg-[#0f172a]">Executive Double</option>
+                                <option value="suite" class="bg-[#0f172a]">Presidential Suite</option>
+                                <option value="deluxe" class="bg-[#0f172a]">Deluxe Family Room</option>
+                            </select>
+                            <div class="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-indigo-400">
+                                ▼
+                            </div>
+                        </div>
+                        <p id="roomTypeError" class="text-rose-400 text-xs hidden italic"></p>
+                    </div>
+
+                    <!-- Guest Count -->
+                    <div class="space-y-3">
+                        <label for="guests" class="text-xs font-bold uppercase tracking-widest text-indigo-400/80">Guest
+                            Count</label>
+                        <input type="number" id="guests" name="guests" min="1" max="10" placeholder="1" required
+                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none input-glow transition-all duration-500">
+                        <p id="guestsError" class="text-rose-400 text-xs hidden italic"></p>
+                    </div>
+
+                    <!-- Special Requests -->
+                    <div class="md:col-span-2 space-y-3">
+                        <label for="requests"
+                            class="text-xs font-bold uppercase tracking-widest text-indigo-400/80">Concierge Notes
+                            (Optional)</label>
+                        <textarea id="requests" name="requests" rows="3"
+                            placeholder="Dietary preferences, special occasions, etc."
+                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none input-glow transition-all resize-none duration-500"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="md:col-span-2 pt-6">
+                        <button type="submit"
+                            class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-5 rounded-2xl shadow-[0_10px_30px_rgba(79,70,229,0.3)] transition-all duration-500 transform hover:scale-[1.01] active:scale-95 btn-shine">
+                            <span class="tracking-[0.2em] uppercase">Confirm Reservation</span>
+                        </button>
+                    </div>
+                </form>
+
+                <div id="successMessage"
+                    class="hidden mt-10 p-6 bg-emerald-500/10 border border-emerald-500/20 rounded-3xl animate-in zoom-in slide-in-from-bottom-4 duration-500">
+                    <p class="text-emerald-400 text-center font-medium text-lg italic">✨ Your request has been received.
+                        Redirecting to dashboard...</p>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Hotel Dashboard Section -->
+    <div id="dashboardSection" class="hidden w-full max-w-7xl animate-in fade-in slide-in-from-bottom-8 duration-700">
+        <header class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-white mb-4">Choose Your Destination</h2>
+            <p class="text-indigo-300">Available luxury escapes tailored for you</p>
+        </header>
+        <div id="hotelGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Hotel cards will be injected here -->
+        </div>
+        <div class="mt-16 text-center">
+            <button onclick="showSection('booking')"
+                class="text-indigo-400 hover:text-white transition-colors duration-300 flex items-center justify-center gap-2 mx-auto border-b border-indigo-400/30 pb-1">
+                <span>← Back to Reservation</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Luxury Details Section -->
+    <div id="detailsSection" class="hidden w-full max-w-6xl animate-in fade-in zoom-in duration-700">
+        <!-- Details content will be injected here -->
+    </div>
+
+    <!-- Final Confirmation Section -->
+    <div id="confirmationSection"
+        class="hidden w-full max-w-4xl animate-in fade-in slide-in-from-bottom-8 duration-700">
+        <div class="glass-card rounded-[3rem] p-12 text-center relative overflow-hidden">
+            <div
+                class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-indigo-500 via-emerald-500 to-indigo-500">
+            </div>
+            <div class="mb-8">
+                <div class="w-24 h-24 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-5xl text-emerald-400">✓</span>
+                </div>
+                <h2 class="text-4xl font-bold text-white mb-4">Booking Confirmed!</h2>
+                <p id="confirmationMessage" class="text-indigo-200 text-lg"></p>
+            </div>
+
+            <div id="bookingSummary"
+                class="bg-white/5 rounded-3xl p-8 border border-white/10 text-left space-y-6 mb-10">
+                <!-- Summary details will be injected here -->
+            </div>
+
+            <button onclick="location.reload()"
+                class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-5 px-12 rounded-2xl shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                Return Home
+            </button>
+        </div>
+    </div>
+
 
     <script src="script.js"></script>
 </body>
