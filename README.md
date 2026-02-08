@@ -18,7 +18,7 @@ A modern, responsive hotel booking form built with HTML5, Tailwind CSS, and Vani
 - **Google Fonts**: 'Outfit' for a premium typography feel.
 
 ## How to Run
-1. **Site Link**:
+1. **Site Link**:https://kunal753014.github.io/GRAND-HORIZON/
 2. Open `index.html` in any modern web browser (Chrome, Edge, Firefox).
 3. Alternatively, if you have VS Code, use the "Live Server" extension.
 
